@@ -33,7 +33,6 @@ metnet3 = MetNet3(
 
 # CPU
 device = torch.device("cpu")
-print(f"Using device: {device}")
 metnet3.to(device)
 optimizer = torch.optim.Adam(metnet3.parameters(), lr=1e-4)
 
@@ -80,7 +79,7 @@ for epoch in range(100):  # 100 times
     train_losses.append(avg_loss)
     print(f"Epoch [{epoch+1}/100], Training Loss: {avg_loss}")  
 
-        # Evaluate Model
+    # Evaluate Model
     metnet3.eval()
     running_val_loss = 0.0
     with torch.no_grad():
@@ -109,7 +108,7 @@ for epoch in range(100):  # 100 times
 
         avg_val_loss = running_val_loss / len(val_loader)
         val_losses.append(avg_val_loss)
-        print(f"Epoch [{epoch+1}/100], Validation Loss: {avg_val_loss}")  # 更新输出信息中的epoch范围
+        print(f"Epoch [{epoch+1}/100], Validation Loss: {avg_val_loss}")
 
     # Save Model
     if (epoch + 1) % 10 == 0 or (epoch + 1) == 100:
@@ -121,9 +120,6 @@ for epoch in range(100):  # 100 times
             'val_loss': avg_val_loss,
         }, os.path.join(save_path, f'metnet3_epoch_{epoch+1}.pth'))
         print(f"Model saved after epoch {epoch+1}")
-
-
-    
 
 # Visualization 
 plt.figure(figsize=(10, 5))
