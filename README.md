@@ -1,6 +1,12 @@
 # Metnet3
 Reproduce the Metnet3 using dataset in Weather4Cast
 
+
+![training_validation_loss_1](https://github.com/user-attachments/assets/7ea1afe7-b265-4b34-b32d-e82db80282c5)
+
+![training_validation_loss_2](https://github.com/user-attachments/assets/309d1e7a-652a-41e5-bcbe-e967572d3641)
+
+
 Citation:
 
 https://github.com/lucidrains/metnet3-pytorch?tab=readme-ov-file
